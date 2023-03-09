@@ -1,0 +1,27 @@
+### ADD some books first using the client below
+POST http://localhost:8080/api/book
+Content-Type: application/json
+Cookie: key=first-value
+
+{
+  "title": "Lord of the rings",
+  "isbn": "9788324148622",
+  "authorFirstName": "J.R.R.",
+  "authorLastName": "Tolkien"
+}
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 201, "Response status is not 200");
+    });
+%}
+
+
+### GET books you've added above
+GET http://localhost:8080/api/book/list
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+%}
+

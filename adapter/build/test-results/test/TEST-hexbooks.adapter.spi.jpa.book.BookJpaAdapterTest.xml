@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hexbooks.adapter.spi.jpa.book.BookJpaAdapterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-03-09T15:57:51" hostname="lstolowski-ps-laptop" time="0.686">
+  <properties/>
+  <testcase name="shouldFindOneBookByIsbnAndMapCorrectlyToDomainModel()" classname="hexbooks.adapter.spi.jpa.book.BookJpaAdapterTest" time="0.683"/>
+  <testcase name="shouldNotFindBookByIsbnAndReturnEmptyCollection()" classname="hexbooks.adapter.spi.jpa.book.BookJpaAdapterTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
