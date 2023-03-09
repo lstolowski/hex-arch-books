@@ -1,7 +1,6 @@
-# Hexagonal architecture example:
-## Books catalogue
+# Hexagonal architecture example: Books catalogue
 
-### Architecture
+## Architecture
 
 Project is divided into 3 main parts:
 - [domain](domain) - contains business domain objects and business logic and ports as interfaces
@@ -13,7 +12,7 @@ It also contains some technical folders such:
 - [buildSrc](buildSrc) which is a technical folder with gradle common configuration
 
 
-#### Domain
+### Domain
 
 Contains business objects and logic (not many use cases are now implemented, see [BookValidator.java](domain%2Fsrc%2Fmain%2Fjava%2Fcom%2Fgithub%2Flstolowski%2Fhexbooks%2Fdomain%2Fmodel%2Fbook%2Fvalidation%2FBookValidator.java)).
 
@@ -23,13 +22,13 @@ to reach the information needed for the business (like goodreads.com integration
 
 Should not contain any dependencies (only libs allowed for dev convenience).
 
-#### Adapter
+### Adapter
 
 Implementation of ports from the `domain`. It contains both, internal and external, communication like DB communication, goodreads (outside world), ES, and REST api endpoints (Spring rest controllers)
 
-### Local run
+## Local run
 
-#### DB 
+### DB 
 Application needs a DB to run:
 ```
 docker compose up
@@ -38,7 +37,7 @@ The database (Postgres) is filed up with a data with automatic schema creation, 
 
 There should be a migration mechanism like flyway or liquibase but I had no time to configure it. 
 
-#### Spring Boot
+### Spring Boot
 Start the app as a normal Spring boot application with some endpoints available
 
 ```
@@ -48,7 +47,7 @@ POST http://localhost:8080/api/book
 GET http://localhost:8080/api/book/list
 ```
 
-#### Rest client implemented
+### Rest client implemented
 
 [e2e-tests-rest-client](e2e-tests-rest-client) folder contains a simple [client.rest](e2e-tests-rest-client%2Fclient.rest) which can be run on the IntelliJ IDEA.
 
