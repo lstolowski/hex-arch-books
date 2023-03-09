@@ -16,16 +16,19 @@ It also contains some technical folders such:
 
 Contains business objects and logic (not many use cases are now implemented, see [BookValidator.java](domain%2Fsrc%2Fmain%2Fjava%2Fcom%2Fgithub%2Flstolowski%2Fhexbooks%2Fdomain%2Fmodel%2Fbook%2Fvalidation%2FBookValidator.java)).
 
-Domain logic and data is exposed outside by the primary ports called [api](domain%2Fsrc%2Fmain%2Fjava%2Fcom%2Fgithub%2Flstolowski%2Fhexbooks%2Fdomain%2Fport%2Fapi).
+Domain logic and data is exposed outside by the primary ports called [api](domain%2Fsrc%2Fmain%2Fjava%2Fcom%2Fgithub%2Flstolowski%2Fhexbooks%2Fdomain%2Fport%2Fapi). 
+This kind of ports are used for to serve business cases as a REST API, SOAP, notification pushes to 3rd parties, etc.
 
 For internal (business purposes) it uses secendary ports called [spi](domain%2Fsrc%2Fmain%2Fjava%2Fcom%2Fgithub%2Flstolowski%2Fhexbooks%2Fdomain%2Fport%2Fspi) 
 to reach the external information needed for the business (like goodreads.com integration for fetching pics) or internal interactions and side effects (like DB or Elasticsearch etc).
 
-Should not contain any dependencies (only libs allowed for dev convenience).
+Should not contain any dependencies (only libs allowed for dev convenience like lombok, commons etc).
 
 ### Adapter
 
-Implementation of ports from the `domain`. It contains both, internal and external, communication like DB communication, goodreads (outside world), ES, and REST api endpoints (Spring rest controllers)
+Implementation of ports from the `domain`. It contains both, internal and external, communication like DB communication, goodreads (outside world), ES, and REST api endpoints (Spring rest controllers).
+
+It also contains mappers from domain to dto (adapter and case specific) objects.
 
 ## Local run
 
