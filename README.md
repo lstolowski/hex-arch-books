@@ -16,7 +16,8 @@ It also contains some technical folders such:
 
 Contains business objects and logic (not many use cases are now implemented, see [BookValidator.java](domain%2Fsrc%2Fmain%2Fjava%2Fcom%2Fgithub%2Flstolowski%2Fhexbooks%2Fdomain%2Fmodel%2Fbook%2Fvalidation%2FBookValidator.java)).
 
-Domain logic and data is exposed outside by the primary ports called [api](domain%2Fsrc%2Fmain%2Fjava%2Fcom%2Fgithub%2Flstolowski%2Fhexbooks%2Fdomain%2Fport%2Fapi)
+Domain logic and data is exposed outside by the primary ports called [api](domain%2Fsrc%2Fmain%2Fjava%2Fcom%2Fgithub%2Flstolowski%2Fhexbooks%2Fdomain%2Fport%2Fapi).
+
 For internal (business purposes) it uses secendary ports called [spi](domain%2Fsrc%2Fmain%2Fjava%2Fcom%2Fgithub%2Flstolowski%2Fhexbooks%2Fdomain%2Fport%2Fspi) 
 to reach the information needed for the business (like goodreads.com integration for fetching pics) or allow side effects (like DB or Elasticsearch etc).
 
