@@ -29,11 +29,16 @@ Implementation of ports from the `domain`. It contains both, internal and extern
 
 ### Local run
 
+#### DB 
 Application needs a DB to run:
 ```
 docker compose up
 ```
+The database (Postgres) is filed up with a data with automatic schema creation, each time the context is started. So ***after app restart the data will be lost***.
 
+There should be a migration mechanism like flyway or liquibase but I had no time to configure it. 
+
+#### Spring Boot
 Start the app as a normal Spring boot application with some endpoints available
 
 ```
